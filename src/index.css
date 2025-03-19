@@ -8,3 +8,13 @@
 body {
     font-family: Inter, sans-serif;
 }
+
+@keyframes aboutShadow {
+    0% {
+        box-shadow: 0 0 100px 70px rgba(173, 216, 230, 0.1);
+    }
+    50% {box-shadow: none;}
+    100% {
+        box-shadow: 0 0 100px 70px rgba(173, 216, 230, 0.1);
+    }
+}
