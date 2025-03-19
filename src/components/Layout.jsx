@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 function Layout({ children }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [children]);
   return (
-    <div className="w-full min-h-screen bg-primary text-white transition-all">
+    <main className="dark:bg-primary dark:text-white">
       <Navbar />
-      {children}
+      <div className="w-full min-h-screen" role="main">
+        {children}
+      </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

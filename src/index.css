@@ -1,6 +1,8 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --color-primary: #000d1d;
 }
@@ -9,7 +11,7 @@ body {
     font-family: Inter, sans-serif;
 }
 
-._navbar, ._about-2 .box {
+._navbar, ._about-2 .box, ._tabs .box {
     transition: all 0.5s ease-in-out;
 }
 

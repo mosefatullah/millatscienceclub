@@ -111,15 +111,15 @@ function Home() {
       title: "At a Glance",
       content: (
         <>
-          <div className="w-full max-w-3xl mx-auto border rounded-lg shadow-sm bg-gray-800/50 border-gray-700 grid grid-cols-2">
+          <div className="w-full max-w-3xl mx-auto border rounded-lg shadow-sm bg-gray-200/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 grid grid-cols-2">
             {[
               ["Years of Experience", "5+"],
               ["Projects", "10"],
               ["National Fest", "1"],
               ["Workshops", "1"],
             ].map((v, i) => (
-              <div className="__topToBottom px-4 py-8 sm:px-8 sm:py-12 text-center">
-                <h3 className="font-semibold text-5xl">{v[1]}</h3>
+              <div className="__topToBottom box px-4 py-8 sm:px-8 sm:py-12 text-center hover:bg-gray-700/5 dark:hover:bg-gray-700/30 border border-transparent hover:border-gray-500 dark:hover:border-gray-700">
+                <h3 className="font-semibold text-5xl animate-pulse">{v[1]}</h3>
                 <p className="text-xl mt-3">{v[0]}</p>
               </div>
             ))}
@@ -139,27 +139,33 @@ function Home() {
       <div className="_hero w-full min-h-[90vh]">
         <div className="lg:flex relative lg:h-[90vh]">
           <div className="w-full lg:w-[60%] h-full px-4 sm:px-8 py-12 flex flex-col justify-center">
-            <h1 className="__topToBottom text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
+            <h1 className="__topToBottom text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Discover the{" "}
-              <span className="fade-text text-gray-400" ref={typeFade}>
+              <span
+                className="fade-text dark:text-gray-400"
+                ref={typeFade}
+              >
                 {texts[currentIndex]}
               </span>{" "}
               of{" "}
-              <span ref={typewriterRef} className="inline text-gray-400">
+              <span
+                ref={typewriterRef}
+                className="inline dark:text-gray-400"
+              >
                 Science!
               </span>
             </h1>
-            <p className="__topToBottom text-lg mb-8 text-blue-100">
+            <p className="__topToBottom text-lg mb-8 text-blue-950 dark:text-blue-100">
               Join Millat Science Club to explore, experiment, and expand your
               scientific knowledge through hands-on activities and engaging
               events.
             </p>
             <div className="__topToBottom flex flex-col sm:flex-row gap-4">
-              <Button dark className="py-3 sm:px-7 sm:text-[1.1rem]">
-                Join Our Club
-              </Button>
               <Button className="py-3 sm:px-7 sm:text-[1.1rem]">
                 Explore Events
+              </Button>
+              <Button dark className="py-3 sm:px-7 sm:text-[1.1rem]">
+                Join Our Club
               </Button>
             </div>
           </div>
@@ -167,14 +173,14 @@ function Home() {
             <img
               src="/images/msc-cover.jpg"
               alt="Millat Science Club"
-              className="w-full h-full object-cover opacity-50"
+              className="w-full h-full object-cover dark:opacity-50"
             />
           </div>
         </div>
       </div>
       <div className="_about-1 shadow-[0_0_100px_70px_rgba(173,216,230,0.1)] animate-[aboutShadow_infinite_3s]">
-        <div className="w-full border border-gray-100/20 bg-primary/50 backdrop-blur-xl grid xl:grid-cols-2">
-          <div className="px-4 sm:px-8 py-18 xl:py-[10rem] border-b-1 xl:border-b-0 xl:border-r-1 border-gray-100/20">
+        <div className="w-full border border-gray-700/20 dark:border-gray-100/20 bg-primary/5 dark:bg-primary/50 backdrop-blur-xl grid xl:grid-cols-2">
+          <div className="px-4 sm:px-8 py-18 xl:py-[10rem] border-b-1 xl:border-b-0 xl:border-r-1 border-gray-700/20 dark:border-gray-100/20">
             <h3 className="__topToBottom text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
               About Millat Science Club
             </h3>
@@ -196,10 +202,10 @@ function Home() {
               </Button>
             </Link>
           </div>
-          <div className="px-4 sm:px-8 py-18 xl:py-[10rem]">
+          <div className="px-4 sm:px-8 py-18 xl:py-[10rem] flex items-center">
             <div
               id="accordion-collapse"
-              className="__topToBottom"
+              className="__topToBottom w-full"
               data-accordion="collapse"
             >
               {accordionData.map(({ id, title, content }) => (
@@ -217,7 +223,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="_about-2 bg-primary py-[5rem] border-b border-gray-100/20">
+      <div className="_about-2 bg-primary text-white py-[5rem] border-b border-gray-100/20">
         <div className="w-full max-w-6xl mx-auto">
           <h3 className="__topToBottom text-2xl text-center md:text-3xl lg:text-4xl font-semibold mb-4">
             What Makes Us Different?
@@ -250,13 +256,13 @@ function Home() {
                 href="#"
                 className="box p-8 border rounded-lg shadow-sm bg-gray-800/50 border-gray-700 hover:bg-gray-800/25"
               >
-                <div className="p-5 rounded-full bg-blue-100 text-primary w-fit mb-3">
+                <div className="p-5 rounded-full bg-blue-100 text-primary w-fit mb-3 animate-pulse">
                   {v[2]}
                 </div>
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-100 dark:text-gray-900 dark:text-white">
                   {v[0]}
                 </h5>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
+                <p className="font-normal text-gray-400">
                   {v[1]}
                 </p>
               </div>

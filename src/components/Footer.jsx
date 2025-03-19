@@ -90,7 +90,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/team"
+                    to="/about-us/#team"
                     className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
                     Our Team

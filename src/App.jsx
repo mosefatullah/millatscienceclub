@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Events from "./pages/Events";
+import Resources from "./pages/Resources";
 
 function App() {
   return (
@@ -20,14 +21,24 @@ function App() {
               </L>
             }
           />
-          <Route
-            path="about-us"
-            element={
-              <L>
-                <About />
-              </L>
-            }
-          />
+          <Route path="about-us">
+            <Route
+              index
+              element={
+                <L>
+                  <About />
+                </L>
+              }
+            />
+            <Route
+              path="register"
+              element={
+                <L>
+                  <Register />
+                </L>
+              }
+            />
+          </Route>
           <Route
             path="events"
             element={
@@ -45,18 +56,18 @@ function App() {
             }
           />
           <Route
-            path="contact-us"
+            path="resources"
             element={
               <L>
-                <Contact />
+                <Resources />
               </L>
             }
           />
           <Route
-            path="register"
+            path="contact-us"
             element={
               <L>
-                <Register />
+                <Contact />
               </L>
             }
           />
