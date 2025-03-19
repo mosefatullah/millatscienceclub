@@ -9,7 +9,7 @@ export const topToBottom = () => {
 
     gsap.fromTo(
       element,
-      { opacity: 0, y: -100 },
+      { opacity: 0, y: -60 },
       {
         opacity: 1,
         y: 0,

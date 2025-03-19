@@ -9,6 +9,10 @@ body {
     font-family: Inter, sans-serif;
 }
 
+._navbar, ._about-2 .box {
+    transition: all 0.5s ease-in-out;
+}
+
 @keyframes aboutShadow {
     0% {
         box-shadow: 0 0 100px 70px rgba(173, 216, 230, 0.1);
@@ -17,4 +21,7 @@ body {
     100% {
         box-shadow: 0 0 100px 70px rgba(173, 216, 230, 0.1);
     }
+}
+.fade-text {
+    transition: opacity 1s ease-in-out;
 }
