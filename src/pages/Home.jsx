@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Calendar, Info, Moon, PencilRuler, Users } from "lucide-react";
 import Button from "../components/Button";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { topToBottom } from "../utils/anims";
 import Typewriter from "typewriter-effect/dist/core";
 import AccordionItem from "../components/Accordion";
@@ -141,17 +141,11 @@ function Home() {
           <div className="w-full lg:w-[60%] h-full px-4 sm:px-8 py-12 flex flex-col justify-center">
             <h1 className="__topToBottom text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Discover the{" "}
-              <span
-                className="fade-text dark:text-gray-400"
-                ref={typeFade}
-              >
+              <span className="fade-text dark:text-gray-400" ref={typeFade}>
                 {texts[currentIndex]}
               </span>{" "}
               of{" "}
-              <span
-                ref={typewriterRef}
-                className="inline dark:text-gray-400"
-              >
+              <span ref={typewriterRef} className="inline dark:text-gray-400">
                 Science!
               </span>
             </h1>
@@ -161,12 +155,16 @@ function Home() {
               events.
             </p>
             <div className="__topToBottom flex flex-col sm:flex-row gap-4">
-              <Button className="py-3 sm:px-7 sm:text-[1.1rem]">
-                Explore Events
-              </Button>
-              <Button dark className="py-3 sm:px-7 sm:text-[1.1rem]">
-                Join Our Club
-              </Button>
+              <Link to="/events">
+                <Button className="py-3 sm:px-7 sm:text-[1.1rem]">
+                  Explore Events
+                </Button>
+              </Link>
+              <Link to="/about-us/register">
+                <Button dark className="py-3 sm:px-7 sm:text-[1.1rem]">
+                  Join Our Club
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="w-full lg:w-[40%] h-full">
@@ -185,7 +183,7 @@ function Home() {
               About Millat Science Club
             </h3>
             <p className="__topToBottom text-gray-600 dark:text-gray-400 mb-6">
-              Founded in 2010, Millat Science Club, based at Ta'mirul Millat
+              Founded in 2024, Millat Science Club, based at Ta'mirul Millat
               kamil Madrasah in Bangladesh, is dedicated to fostering scientific
               curiosity and innovation among students and science enthusiasts.
             </p>
@@ -262,9 +260,7 @@ function Home() {
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-100 dark:text-gray-900 dark:text-white">
                   {v[0]}
                 </h5>
-                <p className="font-normal text-gray-400">
-                  {v[1]}
-                </p>
+                <p className="font-normal text-gray-400">{v[1]}</p>
               </div>
             ))}
           </div>
