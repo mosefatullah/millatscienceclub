@@ -1,4 +1,11 @@
-function Button({ children, className, size, dark, ...props }) {
+function Button({
+  children,
+  className,
+  size,
+  dark,
+  disabled = false,
+  ...props
+}) {
   return (
     <>
       <button
@@ -11,6 +18,7 @@ function Button({ children, className, size, dark, ...props }) {
           " " +
           className
         }
+        disabled={disabled}
         {...props}
       >
         {children}

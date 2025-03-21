@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import { api } from "../utils/data";
 
 function Register() {
   const loading = useRef(null);
@@ -9,6 +10,17 @@ function Register() {
   const register = useRef(null);
   const confirm = useRef(null);
   const [active, setActive] = useState(null);
+  const [formData, setFormData] = useState({
+    email: "",
+    first_name: "",
+    last_name: "",
+    phone: "",
+    gender: "",
+    education_institution: "",
+    major: "",
+    payment_reference_code: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const _ = () => {
@@ -38,6 +50,43 @@ function Register() {
       setActive("_info");
     }, 1000);
   }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    console.log(formData);
+    
+
+    try {
+      const response = await fetch(api + "/member/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.status === 201) {
+        setActive("_confirm");
+      } else {
+        console.error("Error: ", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error registering member:", error);
+      alert("There was an error during registration. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -185,7 +234,7 @@ function Register() {
           </div>
         </div>
         <div className="_register hidden" ref={register}>
-          <form className="max-w-3xl mx-auto">
+          <form className="max-w-3xl mx-auto" onSubmit={handleSubmit}>
             <h2 className="text-xl lg:text-2xl xl:text-3xl font-semibold mb-12">
               Member Registration
             </h2>
@@ -193,10 +242,12 @@ function Register() {
             {/* User Details */}
             <Input
               type="email"
-              name="r_email"
+              name="email"
               id="r_email"
               label="ইমেইল ঠিকানা (Email Address)"
               required
+              value={formData.email}
+              onChange={handleInputChange}
             />
             <p className="text-[0.8rem] text-gray-600 dark:text-gray-400 my-4">
               উক্ত ইমেইলে কনফার্মেশন মেসেজ যাবে, তাই সঠিক ইমেইল প্রদান করুন. (A
@@ -207,33 +258,41 @@ function Register() {
             <div className="grid md:grid-cols-2 gap-6 mt-16">
               <Input
                 type="text"
-                name="r_first_name"
+                name="first_name"
                 id="r_first_name"
                 label="প্রদত্ত নাম (First Name)"
                 required
+                value={formData.first_name}
+                onChange={handleInputChange}
               />
               <Input
                 type="text"
-                name="r_last_name"
+                name="last_name"
                 id="r_last_name"
                 label="উপনাম (Last Name)"
                 required
+                value={formData.last_name}
+                onChange={handleInputChange}
               />
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mt-8 mb-16">
               <Input
                 type="tel"
-                name="r_phone"
+                name="phone"
                 id="r_phone"
                 label="ফোন নম্বর (Phone Number)"
                 required
+                value={formData.phone}
+                onChange={handleInputChange}
               />
               <div className="relative z-0 w-full group">
                 <select
                   name="gender"
                   id="gender"
                   className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  value={formData.gender}
+                  onChange={handleInputChange}
                 >
                   <option value="" disabled selected>
                     Select Gender
@@ -263,6 +322,8 @@ function Register() {
                   id="education_institution"
                   label="বর্তমান শিক্ষা প্রতিষ্ঠান (Educational Institution)"
                   required
+                  value={formData.education_institution}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -273,6 +334,8 @@ function Register() {
                   id="major"
                   label="শ্রেণী/বিষয় (Class/Subject)"
                   required
+                  value={formData.major}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -285,6 +348,8 @@ function Register() {
                 id="payment_reference_code"
                 label="রেফারেন্স কোড (Payment Reference Code)"
                 required
+                value={formData.payment_reference_code}
+                onChange={handleInputChange}
               />
             </div>
 
@@ -298,16 +363,16 @@ function Register() {
               <li>বিকাশ (Bkash): 018XXXXXXXXX</li>
               <li>নগদ (Nagad): 017XXXXXXXXX</li>
             </ul>
-          </form>
 
           <div className="mt-5 pt-3 gap-3 flex justify-end">
             <Button dark onClick={() => setActive("_info")}>
               Previous
             </Button>
-            <Button type="submit" onClick={() => setActive("_confirm")}>
+            <Button type="submit" disabled={isSubmitting}>
               Submit
             </Button>
           </div>
+          </form>
         </div>
         <div
           ref={confirm}
@@ -325,7 +390,7 @@ function Register() {
 
           <div className="px-4 py-3 rounded-xl bg-primary text-white my-4">
             <p>
-              Your email address: <b>email@gmail.com</b>
+              Your email address: <b>{formData.email}</b>
             </p>
           </div>
 

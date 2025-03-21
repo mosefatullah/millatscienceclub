@@ -61,8 +61,18 @@ function About() {
             {[
               {
                 name: "Abdur Rahman",
-                inst: "Vice President of Millat Students' Union",
+                inst: "Vice President of Tamirul Millat Students' Union",
                 pic: "w3T1Z7H7.jpg",
+              },
+              {
+                name: "Md Tufayel Ahmed",
+                inst: "General Secretary of Tamirul Millat Students' Union",
+                pic: "0E54959999.jpeg",
+              },
+              {
+                name: "Md Hasan Sarder",
+                inst: "Former President of Millat Science Club",
+                pic: "159558794212054.jpg",
               },
               {
                 name: "Saad Al Amin",
@@ -73,11 +83,6 @@ function About() {
                 name: "Shaifullah Maruf",
                 inst: "Dhaka City College",
                 pic: "shaiu877.jpg",
-              },
-              {
-                name: "Md Hasan Sarder",
-                inst: "Former President. HSC'23",
-                pic: "159558794212054.jpg",
               },
               {
                 name: "Md Irfan Hasan Fahim",

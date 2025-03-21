@@ -25,14 +25,14 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-start">
+              <div className="flex items-start hidden">
                 <div className="bg-blue-700/10 rounded-full p-3 mr-4">
                   <Phone className="h-6 w-6 text-blue-700" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Phone Number</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    +1 (123) 456-7890
+                    +8801800000000
                   </p>
                 </div>
               </div>

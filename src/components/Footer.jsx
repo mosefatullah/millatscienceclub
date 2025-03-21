@@ -183,14 +183,14 @@ function Footer() {
                     </span>
                   </a>
                 </li>
-                <li className="flex items-center space-x-3">
+                <li className="flex items-center space-x-3 hidden">
                   <Phone
                     size={20}
                     className="text-primary dark:text-white flex-shrink-0"
                   />
                   <a href="tel:">
                     <span className="text-gray-600 dark:text-gray-400">
-                      +1 (123) 456-7890
+                      +8801800000000
                     </span>
                   </a>
                 </li>

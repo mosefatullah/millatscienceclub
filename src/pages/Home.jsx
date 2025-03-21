@@ -114,8 +114,8 @@ function Home() {
         <>
           <div className="w-full max-w-3xl mx-auto border rounded-lg shadow-sm bg-gray-200/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 grid grid-cols-2">
             {[
-              ["Years of Experience", "5+"],
-              ["Projects", "10"],
+              ["Founded", "2024"],
+              ["Projects", "2+"],
               ["National Fest", "1"],
               ["Workshops", "1"],
             ].map((v, i) => (
@@ -131,7 +131,11 @@ function Home() {
     {
       id: 2,
       title: "Achievements",
-      content: <></>,
+      content: (
+        <>
+          <div className="w-full min-h-[200px] max-w-3xl mx-auto border rounded-lg shadow-sm bg-gray-200/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 grid grid-cols-2"></div>
+        </>
+      ),
     },
   ];
 
@@ -284,8 +288,8 @@ function Home() {
                       : "hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
                   }`}
                   onClick={(e) => {
-                    e.preventDefault(); // Prevent the default link behavior
-                    handleTabClick(id); // Switch to the clicked tab
+                    e.preventDefault();
+                    handleTabClick(id);
                   }}
                 >
                   {title}

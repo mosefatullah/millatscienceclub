@@ -8,6 +8,7 @@ const Input = ({
   pattern,
   required = false,
   autoComplete = "off",
+  ...props
 }) => {
   return (
     <div className="relative z-0 w-full group">
@@ -20,6 +21,7 @@ const Input = ({
         placeholder=" "
         autoComplete={autoComplete}
         required={required}
+        {...props}
       />
       <label
         htmlFor={id}
