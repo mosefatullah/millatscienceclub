@@ -21,24 +21,22 @@ function App() {
               </L>
             }
           />
-          <Route path="about-us">
-            <Route
-              index
-              element={
-                <L>
-                  <About />
-                </L>
-              }
-            />
-            <Route
-              path="register"
-              element={
-                <L>
-                  <Register />
-                </L>
-              }
-            />
-          </Route>
+          <Route
+            path="about-us"
+            element={
+              <L>
+                <About />
+              </L>
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <L>
+                <Register />
+              </L>
+            }
+          />
           <Route
             path="events"
             element={
@@ -69,6 +67,17 @@ function App() {
               <L>
                 <Contact />
               </L>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <div className="flex justify-center items-center min-h-screen text-center">
+                <div>
+                  <h1 className="text-6xl font-bold">404</h1>
+                  <p className="text-2xl font-semibold">Page not found!</p>
+                </div>
+              </div>
             }
           />
         </Routes>

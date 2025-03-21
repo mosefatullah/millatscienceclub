@@ -74,7 +74,7 @@ function Navbar() {
             )}
           </Button>
 
-          <Link to="/about-us/register" className="hidden sm:block">
+          <Link to="/register" className="hidden sm:block">
             <Button>Register Now!</Button>
           </Link>
         </div>

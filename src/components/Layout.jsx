@@ -9,7 +9,7 @@ function Layout({ children }) {
   return (
     <main className="dark:bg-primary dark:text-white">
       <Navbar />
-      <div className="w-full min-h-screen" role="main">
+      <div className="w-full min-h-[60vh]" role="main">
         {children}
       </div>
       <Footer />

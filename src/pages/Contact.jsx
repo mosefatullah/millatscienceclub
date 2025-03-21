@@ -1,8 +1,12 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 function Contact() {
   return (
     <div>
+      <Helmet>
+        <title>Contact Us</title>
+      </Helmet>
       <div className="w-full max-w-6xl mx-auto pt-12 pb-8">
         <div className="p-6">
           <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>

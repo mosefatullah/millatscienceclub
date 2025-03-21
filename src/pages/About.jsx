@@ -1,7 +1,5 @@
-import { Info } from "lucide-react";
-import Button from "../components/Button";
-import { Link } from "react-router";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { topToBottom } from "../utils/anims";
 
 function About() {
@@ -10,6 +8,9 @@ function About() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>About Us</title>
+      </Helmet>
       <div className="_about-1">
         <div className="w-full border border-gray-700/20 dark:border-gray-100/20 bg-primary/5 dark:bg-primary/50 backdrop-blur-xl grid xl:grid-cols-2">
           <div className="px-4 sm:px-8 py-18 xl:py-[10rem] border-b-1 xl:border-b-0 xl:border-r-1 border-gray-700/20 dark:border-gray-100/20">
@@ -47,7 +48,10 @@ function About() {
         </div>
       </div>
 
-      <div id="team" className="_team shadow-[0_0_100px_70px_rgba(173,216,230,0.1)] animate-[aboutShadow_infinite_3s] border border-gray-700/20 dark:border-gray-100/20">
+      <div
+        id="team"
+        className="_team shadow-[0_0_100px_70px_rgba(173,216,230,0.1)] animate-[aboutShadow_infinite_3s] border border-gray-700/20 dark:border-gray-100/20"
+      >
         <div className="w-full max-w-7xl mx-auto dark:bg-primary/50 backdrop-blur-xl px-8 py-18 xl:py-[5rem]">
           <h3 className="__topToBottom text-2xl md:text-3xl lg:text-4xl font-bold mb-12">
             Advisor Panel

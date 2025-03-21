@@ -7,6 +7,7 @@ import { Link, NavLink } from "react-router";
 import { topToBottom } from "../utils/anims";
 import Typewriter from "typewriter-effect/dist/core";
 import AccordionItem from "../components/Accordion";
+import { Helmet } from "react-helmet";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,6 +137,9 @@ function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>Millat Science Club | মিল্লাত সাইন্স ক্লাব</title>
+      </Helmet>
       <div className="_hero w-full min-h-[90vh]">
         <div className="lg:flex relative lg:h-[90vh]">
           <div className="w-full lg:w-[60%] h-full px-4 sm:px-8 py-12 flex flex-col justify-center">
@@ -160,7 +164,7 @@ function Home() {
                   Explore Events
                 </Button>
               </Link>
-              <Link to="/about-us/register">
+              <Link to="/register">
                 <Button dark className="py-3 sm:px-7 sm:text-[1.1rem]">
                   Join Our Club
                 </Button>
