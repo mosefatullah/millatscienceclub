@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Calendar, Info, Moon, PencilRuler, Users } from "lucide-react";
 import Button from "../components/Button";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
 import { topToBottom } from "../utils/anims";
 import Typewriter from "typewriter-effect/dist/core";
 import AccordionItem from "../components/Accordion";
@@ -34,10 +34,10 @@ function Home() {
   const interval = setInterval(() => {
    if (window.innerWidth > 640) {
     if (typeFade.current) {
-     typeFade.current.classList.add("opacity-0");
+     typeFade.current.classList.add("opacity-50");
      setTimeout(() => {
       if (typeFade.current) {
-       typeFade.current.classList.remove("opacity-0");
+       typeFade.current.classList.remove("opacity-50");
       }
      }, 1000);
     }
@@ -90,9 +90,12 @@ function Home() {
      To join the Millat Science Club, you can visit our club office located at
      the school premises or contact our club representatives through the school
      notice board. We welcome students from all grades who have a passion for
-     science and want to participate in our various activities. You can also register online through our
-     official website at <Link to="/register" className="text-blue-600 dark:text-blue-400">mscbd.org/register</Link> for a more convenient signup
-     process.
+     science and want to participate in our various activities. You can also
+     register online through our official website at{" "}
+     <Link to="/register" className="text-blue-600 dark:text-blue-400">
+      mscbd.org/register
+     </Link>{" "}
+     for a more convenient signup process.
     </>
    ),
   },
@@ -145,9 +148,12 @@ function Home() {
    <Helmet>
     <title>Millat Science Club | মিল্লাত সাইন্স ক্লাব</title>
    </Helmet>
-   <div className="_hero w-full min-h-[90vh]">
-    <div className="lg:flex relative lg:h-[90vh]">
+   <div className="_hero w-full min-h-[86vh]">
+    <div className="lg:flex relative lg:h-[86vh]">
      <div className="w-full lg:w-[60%] h-full px-4 sm:px-8 py-12 flex flex-col justify-center">
+      <span className="text-blue-500 dark:text-blue-400 __topToBottom mb-4 font-semibold text-lg sm:text-xl">
+       WELCOME TO MSC
+      </span>
       <h1 className="__topToBottom text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
        Discover the{" "}
        <span className="fade-text dark:text-gray-400" ref={typeFade}>
@@ -170,17 +176,55 @@ function Home() {
        </Link>
       </div>
      </div>
-     <div className="w-full lg:w-[40%] h-full">
-      <img
-       src="/images/msc-cover.jpg"
-       alt="Millat Science Club"
-       className="w-full h-full object-cover dark:opacity-50"
-      />
+     <div className="w-full lg:w-[40%] h-full bg-[url(/images/msc-cover.jpg)] bg-cover bg-center bg-no-repeat">
+      <div className="w-full h-full bg-black/50 flex items-center justify-center py-12 px-4 sm:px-8 backdrop-blur">
+       <div class="w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div className="hidden">
+        <img
+         src="/msc.jpg"
+         alt="Science Fest"
+         class="w-full rounded-lg aspect-16/9 object-cover mb-6"
+        />
+        <h5 class="mb-2 text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+         1st Al Hikmah Science Fest 2025
+        </h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base">
+         Bridging Science & Faith – Exploring the Harmony Between Religion and
+         Modern Science
+        </p>
+        <Link
+          to="/event/1st-al-hikmah-science-fest-2025"
+         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+         View Event
+         <svg
+          class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+         >
+          <path
+           stroke="currentColor"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="2"
+           d="M1 5h12m0 0L9 1m4 4L9 9"
+          />
+         </svg>
+        </Link></div>
+        <div className="w-full p-6 bg-gray-100 dark:bg-gray-700 rounded-lg">
+           <p className="text-gray-600 dark:text-gray-400 text-center">
+                No upcoming festival!
+           </p>
+        </div>
+       </div>
+      </div>
      </div>
     </div>
    </div>
    <div className="_about-1 shadow-[0_0_100px_70px_rgba(173,216,230,0.1)] animate-[aboutShadow_infinite_3s]">
-    <div className="w-full border border-gray-700/20 dark:border-gray-100/20 bg-primary/5 dark:bg-primary/50 backdrop-blur-xl grid xl:grid-cols-2">
+    <div className="w-full border border-gray-700/20 dark:border-gray-100/20 bg-primary/2 dark:bg-primary/50 backdrop-blur-xl grid xl:grid-cols-2">
      <div className="px-4 sm:px-8 py-18 xl:py-[10rem] border-b-1 xl:border-b-0 xl:border-r-1 border-gray-700/20 dark:border-gray-100/20">
       <h3 className="__topToBottom text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
        About Millat Science Club
@@ -255,6 +299,7 @@ function Home() {
        <div
         href="#"
         className="box p-8 border rounded-lg shadow-sm bg-gray-800/50 border-gray-700 hover:bg-gray-800/25"
+        key={i}
        >
         <div className="p-5 rounded-full bg-blue-100 text-primary w-fit mb-3 animate-pulse">
          {v[2]}

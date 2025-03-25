@@ -4,7 +4,7 @@ const AccordionItem = ({ id, title, content, isOpen, toggleAccordion }) => {
       <h2 id={`accordion-collapse-heading-${id}`}>
         <button
           type="button"
-          className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-300 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+          className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-300 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 cursor-pointer"
           onClick={() => toggleAccordion(id)}
           aria-expanded={isOpen}
           aria-controls={`accordion-collapse-body-${id}`}

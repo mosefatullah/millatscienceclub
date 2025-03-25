@@ -8,9 +8,9 @@ function PanelTeacher() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 xl:gap-8">
      {[
       {
-       name: "Dr. Muhammad Khalilur Rahman Madani",
-       inst: "Acting Principal, TMKM",
-       pic: "khalil-Madani.png",
+       name: "Dr. Mufti Muhammad Abu Yusuf Khan",
+       inst: "Principal, TMKM",
+       pic: "pricpl.jpg",
       },
       {
        name: "Abdul Mannan",
@@ -18,8 +18,13 @@ function PanelTeacher() {
        pic: "mannan.jpg",
       },
       {
-       name: "Ashraful Islam",
-       inst: "Assistant Professor, Biology",
+       name: "Sanaullah Ansari",
+       inst: "Senior Lecturer, Mathematics",
+       pic: "",
+      },
+      {
+       name: "Sheikh Farid",
+       inst: "Lecturer, ICT",
        pic: "",
       },
       {
@@ -28,8 +33,8 @@ function PanelTeacher() {
        pic: "",
       },
       {
-       name: "Sanaullah Ansari",
-       inst: "Senior Lecturer, Mathematics",
+       name: "Ashraful Islam",
+       inst: "Assistant Professor, Biology",
        pic: "",
       },
      ].map((v, i) => (

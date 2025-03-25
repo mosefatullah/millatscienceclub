@@ -35,12 +35,12 @@ function PanelAdvisor() {
       {
        name: "Shaifullah Maruf",
        inst: "Dhaka City College",
-       batch: "",
+       batch: "Dakhil'22",
        pic: "shaiu877.jpg",
       },
       {
        name: "Md Irfan Hasan Fahim",
-       inst: "",
+       inst: "Full Stack Web Developer",
        batch: "Alim'23",
        pic: "FiC2dkCZ.jpg",
       },

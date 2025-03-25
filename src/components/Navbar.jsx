@@ -80,7 +80,7 @@ function Navbar() {
     <div className="relative">
      <button
       onClick={toggleAbout}
-      className="flex items-center gap-1 hover:opacity-50 transition-all text-gray-800 dark:text-gray-400"
+      className="flex items-center gap-1 hover:opacity-50 transition-all text-gray-800 dark:text-gray-400 cursor-pointer"
      >
       About <ChevronDown className="w-4 h-4" />
      </button>
