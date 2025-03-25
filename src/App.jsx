@@ -4,12 +4,12 @@ import L from "./components/Layout";
 import About from "./pages/About";
 import Register from "./pages/Register";
 import Contact from "./pages/Contact";
-import Projects from "./pages/Projects";
 import Events from "./pages/Events";
 import Resources from "./pages/Resources";
 import PanelTeacher from "./pages/PanelTeacher";
 import PanelAdvisor from "./pages/PanelAdvisor";
 import PanelExecutive from "./pages/PanelExecutive";
+import PanelFounder from "./pages/PanelFounder";
 
 function App() {
  return (
@@ -24,17 +24,17 @@ function App() {
        </L>
       }
      />
-     <Route path="about-us">
+     <Route
+      path="about-us"
+      element={
+       <L>
+        <About />
+       </L>
+      }
+     />
+     <Route path="panel">
       <Route
-       index
-       element={
-        <L>
-         <About />
-        </L>
-       }
-      />
-      <Route
-       path="teacher-panel"
+       path="teachers"
        element={
         <L>
          <PanelTeacher />
@@ -42,7 +42,7 @@ function App() {
        }
       />
       <Route
-       path="advisor-panel"
+       path="advisors"
        element={
         <L>
          <PanelAdvisor />
@@ -50,10 +50,18 @@ function App() {
        }
       />
       <Route
-       path="executive-panel"
+       path="executives"
        element={
         <L>
          <PanelExecutive />
+        </L>
+       }
+      />
+      <Route
+       path="founders"
+       element={
+        <L>
+         <PanelFounder />
         </L>
        }
       />
@@ -71,14 +79,6 @@ function App() {
       element={
        <L>
         <Events />
-       </L>
-      }
-     />
-     <Route
-      path="projects"
-      element={
-       <L>
-        <Projects />
        </L>
       }
      />

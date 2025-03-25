@@ -1,6 +1,12 @@
+import { Helmet } from "react-helmet";
+
 function PanelAdvisor() {
  return (
   <div>
+   <Helmet>
+    <title>Panel - Advisor</title>
+    <meta name="description" content="The advisors of the club." />
+   </Helmet>
    <div className="w-full max-w-7xl mx-auto dark:bg-primary/50 backdrop-blur-xl px-8 py-18 xl:py-[5rem]">
     <h3 className="__topToBottom text-2xl md:text-3xl lg:text-4xl font-bold mb-12">
      Advisors Panel

@@ -1,6 +1,12 @@
+import { Helmet } from "react-helmet";
+
 function PanelTeacher() {
  return (
   <div>
+   <Helmet>
+    <title>Panel - Teachers</title>
+    <meta name="description" content="The panel of teachers of the club." />
+   </Helmet>
    <div className="w-full max-w-7xl mx-auto dark:bg-primary/50 backdrop-blur-xl px-8 py-18 xl:py-[5rem]">
     <h3 className="__topToBottom text-2xl md:text-3xl lg:text-4xl font-bold mb-12">
      Teachers Panel
@@ -8,9 +14,14 @@ function PanelTeacher() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 xl:gap-8">
      {[
       {
-       name: "Dr. Mufti Muhammad Abu Yusuf Khan",
+       name: "Dr. Muhammad Abu Yusuf Khan",
        inst: "Principal, TMKM",
        pic: "pricpl.jpg",
+      },
+      {
+       name: "Dr. Khalilur Rahman Madani",
+       inst: "Vice Principal, TMKM",
+       pic: "khalil-Madani.png",
       },
       {
        name: "Abdul Mannan",

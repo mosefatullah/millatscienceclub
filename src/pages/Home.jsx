@@ -57,7 +57,7 @@ function Home() {
  const accordionData = [
   {
    id: 1,
-   title: "What is Tamirul Millat Kamil Madrasah?",
+   title: "About Tamirul Millat Kamil Madrasah?",
    content: (
     <>
      Tamirul Millat Kamil Madrasah is a well-established educational institution
@@ -70,15 +70,17 @@ function Home() {
   },
   {
    id: 2,
-   title: "What is the Millat Science Club?",
+   title: "Why should I join the Millat Science Club?",
    content: (
     <>
-     The Millat Science Club is a student-run organization at Tamirul Millat
-     Kamil Madrasah that aims to foster a love for science and technology among
-     students. Through various activities, workshops, and events, we encourage
-     scientific curiosity and provide hands-on learning experiences. Our goal is
-     to develop critical thinking skills, enhance creativity, and inspire the
-     next generation of scientists and innovators.
+     The Millat Science Club offers a unique opportunity for students to explore
+     the fascinating world of science through hands-on activities, workshops,
+     and events. By joining the club, you will have the chance to develop your
+     scientific knowledge and skills, collaborate with like-minded peers, and
+     participate in exciting projects and competitions. Whether you are
+     passionate about biology, chemistry, physics, or any other scientific
+     field, the Millat Science Club provides a supportive and engaging
+     environment for you to learn, grow, and have fun!
     </>
    ),
   },
@@ -118,7 +120,7 @@ function Home() {
        ["Founded", "2016"],
        ["Projects", "2+"],
        ["National Fest", "1"],
-       ["Workshops", "1"],
+       ["Workshops", "50+"],
       ].map((v, i) => (
        <div
         className="__topToBottom box px-4 py-8 sm:px-8 sm:py-12 text-center hover:bg-gray-700/5 dark:hover:bg-gray-700/30 border border-transparent hover:border-gray-500 dark:hover:border-gray-700"
@@ -147,6 +149,10 @@ function Home() {
   <>
    <Helmet>
     <title>Millat Science Club | মিল্লাত সাইন্স ক্লাব</title>
+    <meta
+     name="description"
+     content="Join Millat Science Club to explore, experiment, and expand your scientific knowledge."
+    />
    </Helmet>
    <div className="_hero w-full min-h-[86vh]">
     <div className="lg:flex relative lg:h-[86vh]">
@@ -180,43 +186,44 @@ function Home() {
       <div className="w-full h-full bg-black/50 flex items-center justify-center py-12 px-4 sm:px-8 backdrop-blur">
        <div class="w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
         <div className="hidden">
-        <img
-         src="/msc.jpg"
-         alt="Science Fest"
-         class="w-full rounded-lg aspect-16/9 object-cover mb-6"
-        />
-        <h5 class="mb-2 text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-         1st Al Hikmah Science Fest 2025
-        </h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base">
-         Bridging Science & Faith – Exploring the Harmony Between Religion and
-         Modern Science
-        </p>
-        <Link
+         <img
+          src="/msc.jpg"
+          alt="Science Fest"
+          class="w-full rounded-lg aspect-16/9 object-cover mb-6"
+         />
+         <h5 class="mb-2 text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          1st Al Hikmah Science Fest 2025
+         </h5>
+         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base">
+          Bridging Science & Faith – Exploring the Harmony Between Religion and
+          Modern Science
+         </p>
+         <Link
           to="/event/1st-al-hikmah-science-fest-2025"
-         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-         View Event
-         <svg
-          class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
+          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
          >
-          <path
-           stroke="currentColor"
-           stroke-linecap="round"
-           stroke-linejoin="round"
-           stroke-width="2"
-           d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-         </svg>
-        </Link></div>
+          View Event
+          <svg
+           class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+           aria-hidden="true"
+           xmlns="http://www.w3.org/2000/svg"
+           fill="none"
+           viewBox="0 0 14 10"
+          >
+           <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"
+           />
+          </svg>
+         </Link>
+        </div>
         <div className="w-full p-6 bg-gray-100 dark:bg-gray-700 rounded-lg">
-           <p className="text-gray-600 dark:text-gray-400 text-center">
-                No upcoming festival!
-           </p>
+         <p className="text-gray-600 dark:text-gray-400 text-center">
+          No upcoming festival!
+         </p>
         </div>
        </div>
       </div>

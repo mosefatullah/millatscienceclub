@@ -69,28 +69,37 @@ function Navbar() {
    </div>
 
    <ul className="hidden xl:flex gap-8">
-    <NavLink
-     to="/"
-     className="hover:opacity-50 transition-all text-gray-800 dark:text-gray-400"
-     onClick={() => setIsMenuOpen(false)}
-    >
-     <li>Home</li>
-    </NavLink>
+    {[
+     ["Home", "/"],
+     ["About Us", "/about-us"],
+    ].map(([title, path], i) => (
+     <NavLink
+      to={path}
+      key={i}
+      className="hover:opacity-50 transition-all text-gray-800 dark:text-gray-400"
+      onClick={() => {
+       setIsAboutOpen(false);
+       setIsMenuOpen(false);
+      }}
+     >
+      <li>{title}</li>
+     </NavLink>
+    ))}
 
     <div className="relative">
      <button
       onClick={toggleAbout}
       className="flex items-center gap-1 hover:opacity-50 transition-all text-gray-800 dark:text-gray-400 cursor-pointer"
      >
-      About <ChevronDown className="w-4 h-4" />
+      Panel <ChevronDown className="w-4 h-4" />
      </button>
      {isAboutOpen && (
       <ul className="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg border dark:border-gray-700 rounded-md">
        {[
-        ["About Us", "/about-us"],
-        ["Teachers Panel", "/about-us/teacher-panel"],
-        ["Advisors Panel", "/about-us/advisor-panel"],
-        ["Executives Panel", "/about-us/executive-panel"],
+        ["Teachers", "/panel/teachers"],
+        ["Executives", "/panel/executives"],
+        ["Advisors", "/panel/advisors"],
+        ["Founders", "/panel/founders"],
        ].map(([title, path], i) => (
         <NavLink
          to={path}
@@ -107,7 +116,6 @@ function Navbar() {
 
     {[
      ["Events", "/events"],
-     ["Projects", "/projects"],
      ["Resources", "/resources"],
      ["Contact Us", "/contact-us"],
     ].map(([title, path], i) => (
@@ -127,34 +135,42 @@ function Navbar() {
 
    {isMenuOpen && (
     <ul className="lg:hidden absolute top-18 left-0 right-0 bg-white dark:bg-primary p-4 border-t-2 border-gray-700/20 dark:border-gray-100/20 flex flex-col gap-4 border-b-1">
-     <NavLink
-      to="/"
-      className="text-gray-800 dark:text-gray-400"
-      onClick={() => setIsMenuOpen(false)}
-     >
-      <li>Home</li>
-     </NavLink>
-
+     {[
+      ["Home", "/"],
+      ["About Us", "/about-us"],
+     ].map(([title, path], i) => (
+      <NavLink
+       to={path}
+       key={i}
+       className="text-gray-800 dark:text-gray-400"
+       onClick={() => setIsMenuOpen(false)}
+      >
+       <li>{title}</li>
+      </NavLink>
+     ))}
      <div>
       <button
        onClick={toggleAbout}
        className="flex items-center gap-1 text-gray-800 dark:text-gray-400"
       >
-       About Us <ChevronDown className="w-4 h-4" />
+       Panel <ChevronDown className="w-4 h-4" />
       </button>
       {isAboutOpen && (
        <ul className="mt-2 pl-4">
         {[
-         ["About Us", "/about-us"],
-         ["Teachers Panel", "/about-us/teacher-panel"],
-         ["Advisors Panel", "/about-us/advisor-panel"],
-         ["Executives Panel", "/about-us/executive-panel"],
+         ["Teachers", "/panel/teachers"],
+         ["Executives", "/panel/executives"],
+         ["Advisors", "/panel/advisors"],
+         ["Founders", "/panel/founders"],
         ].map(([title, path], i) => (
          <NavLink
           to={path}
           key={i}
           className="block py-2 text-gray-800 dark:text-gray-400"
-          onClick={() => setIsAboutOpen(false)}
+          onClick={() => {
+           setIsAboutOpen(false);
+           setIsMenuOpen(false);
+          }}
          >
           {title}
          </NavLink>
@@ -162,10 +178,8 @@ function Navbar() {
        </ul>
       )}
      </div>
-
      {[
       ["Events", "/events"],
-      ["Projects", "/projects"],
       ["Resources", "/resources"],
       ["Contact Us", "/contact-us"],
      ].map(([title, path], i) => (
