@@ -95,7 +95,7 @@ function Register() {
       </Helmet>
       <div className="w-full max-w-6xl mx-auto my-[5rem] p-8 lg:p-12 rounded-3xl bg-gray-100/80 dark:bg-white/5">
         <div className="_steps mb-12">
-          <ol className="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
+          <ol className="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base overflow-x-auto">
             <li
               className={`flex md:w-full items-center text-blue-600 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700 ${
                 active === "_register" || active === "_confirm"
@@ -244,15 +244,14 @@ function Register() {
               type="email"
               name="email"
               id="r_email"
-              label="ইমেইল ঠিকানা (Email Address)"
+              label="Email Address"
               required
               value={formData.email}
               onChange={handleInputChange}
             />
             <p className="text-[0.8rem] text-gray-600 dark:text-gray-400 my-4">
-              উক্ত ইমেইলে কনফার্মেশন মেসেজ যাবে, তাই সঠিক ইমেইল প্রদান করুন. (A
-              confirmation message will be sent to this email, so please provide
-              a valid email.)
+              A confirmation message will be sent to this email, so please provide
+              a valid email.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mt-16">
@@ -260,7 +259,7 @@ function Register() {
                 type="text"
                 name="first_name"
                 id="r_first_name"
-                label="প্রদত্ত নাম (First Name)"
+                label="First Name"
                 required
                 value={formData.first_name}
                 onChange={handleInputChange}
@@ -269,7 +268,7 @@ function Register() {
                 type="text"
                 name="last_name"
                 id="r_last_name"
-                label="উপনাম (Last Name)"
+                label="Last Name"
                 required
                 value={formData.last_name}
                 onChange={handleInputChange}
@@ -281,7 +280,7 @@ function Register() {
                 type="tel"
                 name="phone"
                 id="r_phone"
-                label="ফোন নম্বর (Phone Number)"
+                label="Phone Number"
                 required
                 value={formData.phone}
                 onChange={handleInputChange}
@@ -298,17 +297,17 @@ function Register() {
                     Select Gender
                   </option>
                   <option value="male" className="dark:text-gray-900">
-                    পুরুষ (Male)
+                    Male
                   </option>
                   <option value="female" className="dark:text-gray-900">
-                    মহিলা (Female)
+                    Female
                   </option>
                 </select>
                 <label
                   htmlFor="gender"
                   className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  লিঙ্গ (Gender)
+                  Gender
                 </label>
               </div>
             </div>
@@ -320,7 +319,7 @@ function Register() {
                   type="text"
                   name="education_institution"
                   id="education_institution"
-                  label="বর্তমান শিক্ষা প্রতিষ্ঠান (Educational Institution)"
+                  label="Educational Institution"
                   required
                   value={formData.education_institution}
                   onChange={handleInputChange}
@@ -332,7 +331,7 @@ function Register() {
                   type="text"
                   name="major"
                   id="major"
-                  label="শ্রেণী/বিষয় (Class/Subject)"
+                  label="Class/Subject"
                   required
                   value={formData.major}
                   onChange={handleInputChange}
@@ -346,7 +345,7 @@ function Register() {
                 type="text"
                 name="payment_reference_code"
                 id="payment_reference_code"
-                label="রেফারেন্স কোড (Payment Reference Code)"
+                label="Payment Reference Code"
                 required
                 value={formData.payment_reference_code}
                 onChange={handleInputChange}
@@ -355,9 +354,7 @@ function Register() {
 
             {/* Payment Instructions */}
             <p className="text-[0.8rem] text-gray-600 dark:text-gray-400 my-4">
-              অনুগ্রহ করে নিম্নলিখিত অপশনগুলির যেকোনো একটিতে ৫০ টাকা প্রদান করুন
-              এবং রেফারেন্স কোডটি প্রদান করুন: (Please pay 50 TK to one of the
-              following options and provide the payment reference code:)
+              Please pay 50 TK to one of the following options and provide the payment reference code:
             </p>
             <ul className="list-disc pl-5 text-[0.8rem] text-gray-600 dark:text-gray-400 mb-5">
               <li>বিকাশ (Bkash): 018XXXXXXXXX</li>
