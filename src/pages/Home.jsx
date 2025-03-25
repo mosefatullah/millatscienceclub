@@ -184,27 +184,27 @@ function Home() {
      </div>
      <div className="w-full lg:w-[40%] h-full bg-[url(/images/msc-cover.jpg)] bg-cover bg-center bg-no-repeat">
       <div className="w-full h-full bg-black/50 flex items-center justify-center py-12 px-4 sm:px-8 backdrop-blur">
-       <div class="w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+       <div className="w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
         <div className="hidden">
          <img
           src="/msc.jpg"
           alt="Science Fest"
-          class="w-full rounded-lg aspect-16/9 object-cover mb-6"
+          className="w-full rounded-lg aspect-16/9 object-cover mb-6"
          />
-         <h5 class="mb-2 text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+         <h5 className="mb-2 text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
           1st Al Hikmah Science Fest 2025
          </h5>
-         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base">
+         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base">
           Bridging Science & Faith – Exploring the Harmony Between Religion and
           Modern Science
          </p>
          <Link
           to="/event/1st-al-hikmah-science-fest-2025"
-          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
          >
           View Event
           <svg
-           class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+           className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
            aria-hidden="true"
            xmlns="http://www.w3.org/2000/svg"
            fill="none"

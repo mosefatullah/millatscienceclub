@@ -147,7 +147,7 @@ function Register() {
      <div role="status">
       <svg
        aria-hidden="true"
-       class="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+       className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
        viewBox="0 0 100 101"
        fill="none"
        xmlns="http://www.w3.org/2000/svg"
@@ -161,14 +161,14 @@ function Register() {
         fill="currentFill"
        />
       </svg>
-      <span class="sr-only">Loading...</span>
+      <span className="sr-only">Loading...</span>
      </div>
     </div>
-    <div className="_info hidden" ref={info}>
-     <ul class="space-y-4 text-left text-gray-500 dark:text-gray-400">
-      <li class="flex items-center space-x-3 rtl:space-x-reverse">
+    <div className="_info hidden mb-8" ref={info}>
+     <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
+      <li className="flex items-center space-x-3 rtl:space-x-reverse">
        <svg
-        class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+        className="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -184,9 +184,9 @@ function Register() {
        </svg>
        <span>A Unique ID Card & Number!</span>
       </li>
-      <li class="flex items-center space-x-3 rtl:space-x-reverse">
+      <li className="flex items-center space-x-3 rtl:space-x-reverse">
        <svg
-        class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+        className="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -202,9 +202,9 @@ function Register() {
        </svg>
        <span>Chance to participate in Science Fests & Events</span>
       </li>
-      <li class="flex items-center space-x-3 rtl:space-x-reverse">
+      <li className="flex items-center space-x-3 rtl:space-x-reverse">
        <svg
-        class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+        className="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -220,7 +220,7 @@ function Register() {
        </svg>
        <span>
         Membership fee:{" "}
-        <span class="font-semibold text-gray-900 dark:text-white">
+        <span className="font-semibold text-gray-900 dark:text-white">
          200 taka
         </span>
        </span>

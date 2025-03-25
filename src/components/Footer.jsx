@@ -188,8 +188,15 @@ function Footer() {
 
      <div className="border-t border-gray-200 dark:border-gray-800 mt-10 pt-6">
       <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
-       © {new Date().getFullYear() || "2025"} Millat Science Club. All rights
-       reserved.
+       © {new Date().getFullYear() || "2025"} Millat Science Club - Developed by{" "}
+       <a
+        href="https://www.facebook.com/sefatullahpage"
+        target="_blank"
+        className="text-primary dark:text-white"
+       >
+        Sefatullah
+       </a>
+       .
       </p>
      </div>
     </div>
