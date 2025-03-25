@@ -63,8 +63,6 @@ function Register() {
   e.preventDefault();
   setIsSubmitting(true);
 
-  console.log(formData);
-
   try {
    const response = await fetch(api + "/member/register", {
     method: "POST",
@@ -78,10 +76,10 @@ function Register() {
     setActive("_confirm");
    } else {
     console.error("Error: ", response.statusText);
+    alert("An error occurred. Please try again later.");
    }
   } catch (error) {
-   console.error("Error registering member:", error);
-   alert("There was an error during registration. Please try again.");
+   alert(error.message);
   } finally {
    setIsSubmitting(false);
   }
