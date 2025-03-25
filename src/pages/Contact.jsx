@@ -57,7 +57,7 @@ function Contact() {
         <div>
          <h3 className="font-semibold text-lg">Office Hours</h3>
          <p className="text-gray-600 dark:text-gray-400">
-          Sunday - Friday: 9:00 AM - 5:00 PM
+          Sunday - Thursday: 9:00 AM - 5:00 PM
          </p>
          <p className="text-gray-600 dark:text-gray-400">
           Saturday: 10:00 AM - 2:00 PM
