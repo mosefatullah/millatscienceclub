@@ -57,7 +57,7 @@ function Home() {
  const accordionData = [
   {
    id: 1,
-   title: "About Tamirul Millat Kamil Madrasah?",
+   title: "What is Tamirul Millat Kamil Madrasah known for?",
    content: (
     <>
      Tamirul Millat Kamil Madrasah is a well-established educational institution
@@ -154,9 +154,34 @@ function Home() {
      content="Join Millat Science Club to explore, experiment, and expand your scientific knowledge."
     />
    </Helmet>
-   <div className="_hero w-full min-h-[86vh]">
+   <div className="relative _hero w-full min-h-[86vh]">
+    <div className="anims max-w-[100vw]">
+     <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+      className="hidden lg:block size-12 text-emerald-300 absolute top-3 left-3 animate-[3s_var(--animate-spin),3s_var(--animate-pulse)]"
+     >
+      <path
+       fill="currentColor"
+       d="M12 1s0 7-2 9-9 2-9 2 7 0 9 2 2 9 2 9 0-7 2-9 9-2 9-2-7 0-9-2-2-9-2-9"
+      ></path>
+     </svg>
+     {[...Array(150)].map((_, i) => (
+      <div
+       key={i}
+       className="size-[1.5px] bg-white absolute transition-all delay-75 opacity-50"
+       style={{
+        top: `${Math.random() * 100}%`,
+        left: `calc(${Math.random() * 100}% - 100px)`,
+       }}
+      ></div>
+     ))}
+    </div>
     <div className="lg:flex relative lg:h-[86vh]">
-     <div className="w-full lg:w-[60%] h-full px-4 sm:px-8 py-12 flex flex-col justify-center">
+     <div className="w-full lg:w-[55%] h-full px-4 sm:px-8 py-12 flex flex-col justify-center">
       <span className="text-blue-500 dark:text-blue-400 __topToBottom mb-4 font-semibold text-lg sm:text-xl">
        WELCOME TO MSC
       </span>
@@ -165,12 +190,13 @@ function Home() {
        <span className="fade-text dark:text-gray-400" ref={typeFade}>
         {texts[currentIndex]}
        </span>{" "}
+       <br className="hidden lg:block" />
        of{" "}
        <span ref={typewriterRef} className="inline dark:text-gray-400">
         Science!
        </span>
       </h1>
-      <p className="__topToBottom xl:text-lg mb-8 text-blue-950 dark:text-blue-100">
+      <p className="__topToBottom xl:text-lg mb-8 text-gray-600 dark:text-gray-400">
        Join Millat Science Club to explore, experiment, and expand your
        scientific knowledge through hands-on activities and engaging events.
       </p>
@@ -182,6 +208,7 @@ function Home() {
        </Link>
       </div>
      </div>
+     <div className="w-full lg:w-[5%] h-full"></div>
      <div className="w-full lg:w-[40%] h-full bg-[url(/images/msc-cover.jpg)] bg-cover bg-center bg-no-repeat">
       <div className="w-full h-full bg-black/50 flex items-center justify-center py-12 px-4 sm:px-8 backdrop-blur">
        <div className="w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
@@ -232,7 +259,12 @@ function Home() {
    </div>
    <div className="_about-1 shadow-[0_0_100px_70px_rgba(173,216,230,0.1)] animate-[aboutShadow_infinite_3s]">
     <div className="w-full border border-gray-700/20 dark:border-gray-100/20 bg-primary/2 dark:bg-primary/50 backdrop-blur-xl grid xl:grid-cols-2">
-     <div className="px-4 sm:px-8 py-18 xl:py-[10rem] border-b-1 xl:border-b-0 xl:border-r-1 border-gray-700/20 dark:border-gray-100/20">
+     <div className="px-4 sm:px-8 py-18 xl:py-[8rem] border-b-1 xl:border-b-0 xl:border-r-1 border-gray-700/20 dark:border-gray-100/20">
+      <img
+       src="/images/chemistry-rftd.png"
+       alt="Chemistry"
+       className="__topToBottom object-cover w-[150px] mb-4 animate-[3s_var(--animate-bounce)] !opacity-70"
+      />
       <h3 className="__topToBottom text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
        About Millat Science Club
       </h3>
@@ -253,12 +285,15 @@ function Home() {
        </Button>
       </Link>
      </div>
-     <div className="px-4 sm:px-8 py-18 xl:py-[10rem] flex items-center">
+     <div className="px-4 sm:px-8 py-18 xl:py-[8rem] flex items-center">
       <div
        id="accordion-collapse"
        className="__topToBottom w-full"
        data-accordion="collapse"
       >
+       <h3 className="text-lg md:text-xl lg:text-2xl font-medium mb-6">
+        Frequently Asked Questions
+       </h3>
        {accordionData.map(({ id, title, content }) => (
         <AccordionItem
          key={id}
@@ -321,7 +356,7 @@ function Home() {
     </div>
    </div>
 
-   <div className="_tabs py-[5rem] px-4 sm:px-8">
+   <div className="_tabs z-10 py-[5rem] px-4 sm:px-8">
     <div className="w-full max-w-6xl mx-auto">
      <ul className="__topToBottom flex flex-wrap justify-center text-sm font-medium text-center text-gray-500 dark:text-gray-400">
       {tabs.map(({ id, title }) => (

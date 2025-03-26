@@ -45,7 +45,7 @@ function Navbar() {
  return (
   <nav
    ref={menuRef}
-   className="z-50 sticky top-0 left-0 bg-white dark:bg-primary p-2 lg:py-4 flex items-center justify-between border-b-1 border-gray-700/20 dark:border-gray-100/20"
+   className="z-50 sticky top-0 left-0 bg-white/80 dark:bg-primary/80 p-2 lg:py-4 flex items-center justify-between border-b-1 border-gray-700/20 dark:border-gray-100/20 backdrop-blur"
   >
    <div className="flex items-center">
     <div className="lg:hidden flex items-center">

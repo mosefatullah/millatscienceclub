@@ -353,9 +353,8 @@ function Register() {
        Please pay 50 TK to one of the following options and provide the payment
        reference code:
       </p>
-      <ul className="list-disc pl-5 text-[0.8rem] text-gray-600 dark:text-gray-400 mb-5">
-       <li>বিকাশ (Bkash): 018XXXXXXXXX</li>
-       <li>নগদ (Nagad): 017XXXXXXXXX</li>
+      <ul className="list-disc pl-5 text-[0.9rem] text-gray-600 dark:text-gray-400 mb-5">
+       <li>বিকাশ (Bkash): 01318349028</li>
       </ul>
 
       <div className="mt-5 pt-3 gap-3 flex justify-end">

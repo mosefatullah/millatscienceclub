@@ -5,9 +5,9 @@ import ReactLenis from "lenis/react";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <ReactLenis root>
-      <App />
-    </ReactLenis>
-  </StrictMode>
+ <StrictMode>
+  <ReactLenis root>
+   <App />
+  </ReactLenis>
+ </StrictMode>
 );
