@@ -67,7 +67,7 @@ function PanelAdvisor() {
         className="w-full aspect-square object-cover rounded-t-xl"
        />
        <div className="p-4 lg:p-6 flex flex-col justify-center text-center">
-        <h3 className="font-bold text-2xl mb-2">{v.name}</h3>
+        <h3 className="font-bold text-xl mb-2">{v.name}</h3>
         <p className="text-blue-800 dark:text-blue-300">{v.inst}</p>
         <p className="text-blue-800 dark:text-blue-300 italic text-sm">
          {v.batch}

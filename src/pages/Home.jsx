@@ -18,7 +18,7 @@ function Home() {
   topToBottom();
   if (window.innerWidth > 640 && typewriterRef.current) {
    const typewriter = new Typewriter(typewriterRef.current, {
-    strings: ["Science!", "Muslim Scientists!", "Madrasah Students!"],
+    strings: ["Science!", "Muslim Scientists!", "Students!"],
     autoStart: true,
     loop: true,
     delay: 100,

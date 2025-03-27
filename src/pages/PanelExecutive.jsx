@@ -40,7 +40,7 @@ export default function PanelExecutive() {
         className="w-full aspect-square object-cover rounded-t-xl"
        />
        <div className="p-4 lg:p-6 flex flex-col justify-center text-center">
-        <h3 className="font-bold text-2xl mb-2">{v.name}</h3>
+        <h3 className="font-bold text-xl mb-2">{v.name}</h3>
         <p className="text-blue-800 dark:text-blue-300">{v.role}</p>
        </div>
       </div>
@@ -89,7 +89,7 @@ export default function PanelExecutive() {
         className="w-full aspect-square object-cover rounded-t-xl"
        />
        <div className="p-4 lg:p-6 flex flex-col justify-center text-center">
-        <h3 className="font-bold text-2xl mb-2">{v.name}</h3>
+        <h3 className="font-bold text-xl mb-2">{v.name}</h3>
         <p className="text-blue-800 dark:text-blue-300">{v.role}</p>
        </div>
       </div>

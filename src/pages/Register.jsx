@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import { api } from "../utils/data";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Register() {
  const loading = useRef(null);
@@ -10,6 +11,8 @@ function Register() {
  const register = useRef(null);
  const confirm = useRef(null);
  const [active, setActive] = useState(null);
+ const recaptcha = useRef();
+
  const [formData, setFormData] = useState({
   email: "",
   first_name: "",
@@ -61,6 +64,13 @@ function Register() {
 
  const handleSubmit = async (e) => {
   e.preventDefault();
+
+  const captchaValue = recaptcha.current.getValue();
+  if (!captchaValue) {
+   alert("Please verify the reCAPTCHA!");
+   return;
+  }
+
   setIsSubmitting(true);
 
   try {
@@ -72,11 +82,10 @@ function Register() {
     body: JSON.stringify(formData),
    });
 
-   if (response.status === 201) {
-    setActive("_confirm");
+   if (!response.ok) {
+    alert(response.text()?.message || "Failed to register. Please try again.");
    } else {
-    console.error("Error: ", response.statusText);
-    alert("An error occurred. Please try again later.");
+    setActive("_confirm");
    }
   } catch (error) {
    alert(error.message);
@@ -356,6 +365,13 @@ function Register() {
       <ul className="list-disc pl-5 text-[0.9rem] text-gray-600 dark:text-gray-400 mb-5">
        <li>বিকাশ (Bkash): 01318349028</li>
       </ul>
+
+      <div className="pt-5">
+       <ReCAPTCHA
+        ref={recaptcha}
+        sitekey="6Ldf0AErAAAAAECiJCd_uLX7ysbus4s1OUXMHlKB"
+       />
+      </div>
 
       <div className="mt-5 pt-3 gap-3 flex justify-end">
        <Button dark onClick={() => setActive("_info")}>
