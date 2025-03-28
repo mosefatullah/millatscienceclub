@@ -8,6 +8,7 @@ import { topToBottom } from "../utils/anims";
 import Typewriter from "typewriter-effect/dist/core";
 import AccordionItem from "../components/Accordion";
 import { Helmet } from "react-helmet";
+import panels from "../utils/panels.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -175,7 +176,7 @@ function Home() {
        className="size-[1.5px] bg-white absolute transition-all delay-75 opacity-50"
        style={{
         top: `${Math.random() * 100}%`,
-        left: `calc(${Math.random() * 100}% - 100px)`,
+        left: `calc(${Math.random() * 100}% - 50px)`,
        }}
       ></div>
      ))}
@@ -384,6 +385,30 @@ function Home() {
        ({ id, content }) => activeTab === id && <div key={id}>{content}</div>
       )}
      </div>
+    </div>
+   </div>
+
+   <div className="w-full max-w-7xl mx-auto dark:bg-primary/50 backdrop-blur-xl px-8 pb-[5rem]">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 xl:gap-8 w-full max-w-4xl mx-auto">
+     {panels.executives &&
+      panels.executives.main.map((v, i) => (
+       <div
+        className="__topToBottom border border-gray-400/40 dark:border-gray-700/30 bg-gray-500/5 dark:bg-gray-700/20 rounded-xl"
+        key={i}
+       >
+        <img
+         src={"/images/person/" + v.pic}
+         alt={v.name}
+         className="w-full aspect-square object-cover rounded-t-xl"
+        />
+        <div className="p-4 lg:p-6 flex flex-col justify-center text-center">
+         <h3 className="font-bold sm:text-xl sm:mb-2">{v.name}</h3>
+         <p className="text-blue-800 dark:text-blue-300 text-xs sm:text-sm">
+          {v.role}
+         </p>
+        </div>
+       </div>
+      ))}
     </div>
    </div>
   </>

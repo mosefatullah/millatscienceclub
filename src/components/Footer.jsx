@@ -1,13 +1,5 @@
 import { Link } from "react-router";
-import {
- Facebook,
- Twitter,
- Instagram,
- Youtube,
- Mail,
- MapPin,
- Phone,
-} from "lucide-react";
+import { Facebook, Twitter, Youtube, Mail, MapPin } from "lucide-react";
 
 function Footer() {
  return (
@@ -37,28 +29,21 @@ function Footer() {
        </p>
        <div className="flex space-x-4">
         <a
-         href="#"
+         href="https://www.facebook.com/profile.php?id=61567819585264"
          aria-label="Facebook"
          className="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white"
         >
          <Facebook size={20} />
         </a>
         <a
-         href="#"
+         href="https://x.com/mscbd_org"
          aria-label="Twitter"
          className="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white"
         >
          <Twitter size={20} />
         </a>
         <a
-         href="#"
-         aria-label="Instagram"
-         className="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white"
-        >
-         <Instagram size={20} />
-        </a>
-        <a
-         href="#"
+         href="https://www.youtube.com/@MillatScienceClub"
          aria-label="YouTube"
          className="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white"
         >
@@ -98,14 +83,6 @@ function Footer() {
         </li>
         <li>
          <Link
-          to="/resources"
-          className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
-         >
-          Resources
-         </Link>
-        </li>
-        <li>
-         <Link
           to="/contact-us"
           className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
          >
@@ -121,36 +98,12 @@ function Footer() {
        </h3>
        <ul className="space-y-2">
         <li>
-         <a
-          href="#"
+         <Link
+          to="/resources"
           className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
          >
-          Science Articles
-         </a>
-        </li>
-        <li>
-         <a
-          href="#"
-          className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
-         >
-          Research Papers
-         </a>
-        </li>
-        <li>
-         <a
-          href="#"
-          className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
-         >
-          Science News
-         </a>
-        </li>
-        <li>
-         <a
-          href="#"
-          className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
-         >
-          Educational Videos
-         </a>
+          All Resources
+         </Link>
         </li>
        </ul>
       </div>

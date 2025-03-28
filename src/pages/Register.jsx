@@ -73,25 +73,26 @@ function Register() {
 
   setIsSubmitting(true);
 
-  try {
-   const response = await fetch(api + "/member/register", {
-    method: "POST",
-    headers: {
-     "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-   });
+ try {
+  const response = await fetch(api + "/member/register", {
+   method: "POST",
+   headers: {
+    "Content-Type": "application/json",
+   },
+   body: JSON.stringify(formData),
+  });
 
-   if (!response.ok) {
-    alert(response.text()?.message || "Failed to register. Please try again.");
-   } else {
-    setActive("_confirm");
-   }
-  } catch (error) {
-   alert(error.message);
-  } finally {
-   setIsSubmitting(false);
+  if (!response.ok) {
+   const errorData = await response.json();
+   alert(errorData?.error?.message || "Failed to register. Please try again.");
+  } else {
+   setActive("_confirm");
   }
+ } catch (error) {
+  alert(error.message || "Failed to register. Please try again.");
+ } finally {
+  setIsSubmitting(false);
+ }
  };
 
  return (
@@ -172,6 +173,7 @@ function Register() {
      </div>
     </div>
     <div className="_info hidden mb-8" ref={info}>
+     <h2 className="text-xl lg:text-2xl font-semibold mb-4">Features</h2>
      <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
       <li className="flex items-center space-x-3 rtl:space-x-reverse">
        <svg
@@ -189,7 +191,7 @@ function Register() {
          d="M1 5.917 5.724 10.5 15 1.5"
         />
        </svg>
-       <span>A Unique ID Card & Number!</span>
+       <span>An Unique ID number for all members.</span>
       </li>
       <li className="flex items-center space-x-3 rtl:space-x-reverse">
        <svg
@@ -207,7 +209,31 @@ function Register() {
          d="M1 5.917 5.724 10.5 15 1.5"
         />
        </svg>
-       <span>Chance to participate in Science Fests & Events</span>
+       <span>Chance to participate in Science Fests & Events.</span>
+      </li>
+     </ul>
+
+     <h2 className="text-xl lg:text-2xl font-semibold mt-12 mb-4">
+      Requirements
+     </h2>
+     <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
+      <li className="flex items-center space-x-3 rtl:space-x-reverse">
+       <svg
+        className="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 16 12"
+       >
+        <path
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         d="M1 5.917 5.724 10.5 15 1.5"
+        />
+       </svg>
+       <span>Must be a student of any educational institution.</span>
       </li>
       <li className="flex items-center space-x-3 rtl:space-x-reverse">
        <svg
@@ -230,6 +256,7 @@ function Register() {
         <span className="font-semibold text-gray-900 dark:text-white">
          200 taka
         </span>
+        .
        </span>
       </li>
      </ul>

@@ -50,8 +50,6 @@ function About() {
      </div>
     </div>
    </div>
-
-   <div className="shadow-[0_0_100px_70px_rgba(173,216,230,0.1)] animate-[aboutShadow_infinite_3s] border border-gray-700/20 dark:border-gray-100/20"></div>
   </>
  );
 }

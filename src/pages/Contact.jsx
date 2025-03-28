@@ -8,9 +8,9 @@ function Contact() {
     <title>Contact Us</title>
     <meta name="description" content="Get in touch with us." />
    </Helmet>
-   <div className="w-full max-w-6xl mx-auto pt-12 pb-8">
+   <div className="w-full max-w-6xl mx-auto pt-12 pb-20">
     <div className="p-6">
-     <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
+     <h2 className="text-2xl xl:text-3xl font-bold mb-8">Get in Touch</h2>
 
      <div className="grid gap-12 lg:grid-cols-2">
       <div className="space-y-6">
@@ -50,21 +50,6 @@ function Contact() {
         </div>
        </div>
 
-       <div className="flex items-start">
-        <div className="bg-blue-700/10 rounded-full p-3 mr-4">
-         <Clock className="h-6 w-6 text-blue-700" />
-        </div>
-        <div>
-         <h3 className="font-semibold text-lg">Office Hours</h3>
-         <p className="text-gray-600 dark:text-gray-400">
-          Sunday - Thursday: 9:00 AM - 5:00 PM
-         </p>
-         <p className="text-gray-600 dark:text-gray-400">
-          Saturday: 10:00 AM - 2:00 PM
-         </p>
-         <p className="text-gray-600 dark:text-gray-400">Friday: Closed</p>
-        </div>
-       </div>
       </div>
 
       <div>
