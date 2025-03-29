@@ -5,11 +5,13 @@ import About from "./pages/About";
 import Register from "./pages/Register";
 import Contact from "./pages/Contact";
 import Events from "./pages/Events";
+import EventById from "./pages/EventById";
 import Resources from "./pages/Resources";
 import PanelTeacher from "./pages/PanelTeacher";
 import PanelAdvisor from "./pages/PanelAdvisor";
 import PanelExecutive from "./pages/PanelExecutive";
 import PanelFounder from "./pages/PanelFounder";
+import ResourceById from "./pages/ResourceById";
 
 function App() {
  return (
@@ -83,10 +85,26 @@ function App() {
       }
      />
      <Route
+      path="event/:id"
+      element={
+       <L>
+        <EventById />
+       </L>
+      }
+     />
+     <Route
       path="resources"
       element={
        <L>
         <Resources />
+       </L>
+      }
+     />
+     <Route
+      path="resource/:id"
+      element={
+       <L>
+        <ResourceById />
        </L>
       }
      />
