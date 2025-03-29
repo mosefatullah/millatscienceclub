@@ -52,8 +52,8 @@ function ResourceById() {
      </p>
 
      <div className="flex flex-wrap gap-2 mt-4">
-      {resource.tags &&
-       resource.tags.split(",").map((tag) => (
+      {Array.isArray(resource.tags) &&
+       resource.tags.map((tag) => (
         <span
          key={tag}
          className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-800 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-300"

@@ -32,7 +32,7 @@ function Resources() {
         alt=""
        />
        <div class="p-5">
-        <Link to={`/resource/${r.resource_id}`}>
+        <Link to={`/resource/${r.id}`}>
          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white underline-offset-4 underline decoration-blue-500/50 decoration-2">
           {r.title || "Error occured"}
          </h5>
@@ -40,8 +40,8 @@ function Resources() {
           {r.description || "No description available."}
          </p>
          <div class="flex flex-wrap gap-2">
-          {r.tags &&
-           r.tags.split(",").map((tag) => (
+          {Array.isArray(r.tags) &&
+           r.tags.map((tag) => (
             <span
              key={tag}
              class="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-800 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-300"
