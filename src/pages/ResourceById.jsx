@@ -21,7 +21,9 @@ function ResourceById() {
     <meta
      name="description"
      content={
-      (resource && resource.description.slice(0, 150) + "...") ||
+      (resource &&
+       resource.description &&
+       resource.description.slice(0, 150) + "...") ||
       "No description available."
      }
     />

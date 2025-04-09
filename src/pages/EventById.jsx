@@ -22,7 +22,7 @@ function EventById() {
     <meta
      name="description"
      content={
-      (event && event.description.slice(0, 145) + "...") ||
+      (event && event.description && event.description.slice(0, 145) + "...") ||
       "No description available."
      }
     />

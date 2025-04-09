@@ -350,6 +350,7 @@ function Home() {
      </div>
      <div className="__topToBottom mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
       {Array.isArray(achievements) &&
+       achievements &&
        achievements.slice(0, 3).map((achievement, index) => (
         <div key={index}>
          <img
