@@ -1,7 +1,8 @@
 import { Link, NavLink } from "react-router";
 import { useState, useEffect, useRef } from "react";
 import Button from "./Button";
-import { Moon, Sun, Menu, X, ChevronDown } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import Submenu from "./Submenu";
 
 function Navbar() {
  const [theme, setTheme] = useState(() => {
@@ -15,7 +16,6 @@ function Navbar() {
  });
 
  const [isMenuOpen, setIsMenuOpen] = useState(false);
- const [isAboutOpen, setIsAboutOpen] = useState(false);
  const menuRef = useRef(null);
 
  useEffect(() => {
@@ -25,14 +25,11 @@ function Navbar() {
 
  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
- const toggleAbout = () => setIsAboutOpen(!isAboutOpen);
 
- // Close menu when clicking outside
  useEffect(() => {
   function handleClickOutside(event) {
    if (menuRef.current && !menuRef.current.contains(event.target)) {
     setIsMenuOpen(false);
-    setIsAboutOpen(false);
    }
   }
 
@@ -41,6 +38,29 @@ function Navbar() {
    document.removeEventListener("mousedown", handleClickOutside);
   };
  }, []);
+
+ const menuCompoMap = ([title, path], i) => (
+  <NavLink
+   to={path}
+   key={i}
+   className="hover:opacity-50 transition-all text-gray-800 dark:text-gray-400"
+   onClick={() => {
+    setIsMenuOpen(false);
+   }}
+  >
+   <li>{title}</li>
+  </NavLink>
+ );
+ const menuCompoMapMobile = ([title, path], i) => (
+  <NavLink
+   to={path}
+   key={i}
+   className="text-gray-800 dark:text-gray-400"
+   onClick={() => setIsMenuOpen(false)}
+  >
+   <li>{title}</li>
+  </NavLink>
+ );
 
  return (
   <nav
@@ -72,65 +92,31 @@ function Navbar() {
     {[
      ["Home", "/"],
      ["About Us", "/about-us"],
-    ].map(([title, path], i) => (
-     <NavLink
-      to={path}
-      key={i}
-      className="hover:opacity-50 transition-all text-gray-800 dark:text-gray-400"
-      onClick={() => {
-       setIsAboutOpen(false);
-       setIsMenuOpen(false);
-      }}
-     >
-      <li>{title}</li>
-     </NavLink>
-    ))}
+    ].map(menuCompoMap)}
 
-    <div className="relative">
-     <button
-      onClick={toggleAbout}
-      className="flex items-center gap-1 hover:opacity-50 transition-all text-gray-800 dark:text-gray-400 cursor-pointer"
-     >
-      Panel <ChevronDown className="w-4 h-4" />
-     </button>
-     {isAboutOpen && (
-      <ul className="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg border dark:border-gray-700 rounded-md">
-       {[
-        ["Teachers", "/panel/teachers"],
-        ["Executives", "/panel/executives"],
-        ["Advisors", "/panel/advisors"],
-        ["Founders", "/panel/founders"],
-       ].map(([title, path], i) => (
-        <NavLink
-         to={path}
-         key={i}
-         className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
-         onClick={() => setIsAboutOpen(false)}
-        >
-         {title}
-        </NavLink>
-       ))}
-      </ul>
-     )}
-    </div>
+    <Submenu
+     setIsMenuOpen={setIsMenuOpen}
+     menuRef={menuRef}
+     title="Panel"
+     items={[
+      ["Teachers", "/panel/teachers"],
+      ["Executives", "/panel/executives"],
+      ["Advisors", "/panel/advisors"],
+      ["Founders", "/panel/founders"],
+     ]}
+    />
 
-    {[
-     ["Events", "/events"],
-     ["Resources", "/resources"],
-     ["Contact Us", "/contact-us"],
-    ].map(([title, path], i) => (
-     <NavLink
-      to={path}
-      key={i}
-      className="hover:opacity-50 transition-all text-gray-800 dark:text-gray-400"
-      onClick={() => {
-       setIsAboutOpen(false);
-       setIsMenuOpen(false);
-      }}
-     >
-      <li>{title}</li>
-     </NavLink>
-    ))}
+    {[["Achievements", "/achievements"]].map(menuCompoMap)}
+
+    <Submenu
+     setIsMenuOpen={setIsMenuOpen}
+     menuRef={menuRef}
+     title="Activities"
+     items={[
+      ["Events", "/activity/events"],
+      ["Resources", "/activity/resources"],
+     ]}
+    />
    </ul>
 
    {isMenuOpen && (
@@ -138,60 +124,30 @@ function Navbar() {
      {[
       ["Home", "/"],
       ["About Us", "/about-us"],
-     ].map(([title, path], i) => (
-      <NavLink
-       to={path}
-       key={i}
-       className="text-gray-800 dark:text-gray-400"
-       onClick={() => setIsMenuOpen(false)}
-      >
-       <li>{title}</li>
-      </NavLink>
-     ))}
-     <div>
-      <button
-       onClick={toggleAbout}
-       className="flex items-center gap-1 text-gray-800 dark:text-gray-400"
-      >
-       Panel <ChevronDown className="w-4 h-4" />
-      </button>
-      {isAboutOpen && (
-       <ul className="mt-2 pl-4">
-        {[
-         ["Teachers", "/panel/teachers"],
-         ["Executives", "/panel/executives"],
-         ["Advisors", "/panel/advisors"],
-         ["Founders", "/panel/founders"],
-        ].map(([title, path], i) => (
-         <NavLink
-          to={path}
-          key={i}
-          className="block py-2 text-gray-800 dark:text-gray-400"
-          onClick={() => {
-           setIsAboutOpen(false);
-           setIsMenuOpen(false);
-          }}
-         >
-          {title}
-         </NavLink>
-        ))}
-       </ul>
-      )}
-     </div>
-     {[
-      ["Events", "/events"],
-      ["Resources", "/resources"],
-      ["Contact Us", "/contact-us"],
-     ].map(([title, path], i) => (
-      <NavLink
-       to={path}
-       key={i}
-       className="text-gray-800 dark:text-gray-400"
-       onClick={() => setIsMenuOpen(false)}
-      >
-       <li>{title}</li>
-      </NavLink>
-     ))}
+     ].map(menuCompoMapMobile)}
+     <Submenu
+      mobile
+      setIsMenuOpen={setIsMenuOpen}
+      menuRef={menuRef}
+      title="Panel"
+      items={[
+       ["Teachers", "/panel/teachers"],
+       ["Executives", "/panel/executives"],
+       ["Advisors", "/panel/advisors"],
+       ["Founders", "/panel/founders"],
+      ]}
+     />
+     {[["Achievements", "/achievements"]].map(menuCompoMapMobile)}
+     <Submenu
+      mobile
+      setIsMenuOpen={setIsMenuOpen}
+      menuRef={menuRef}
+      title="Activities"
+      items={[
+       ["Events", "/activity/events"],
+       ["Resources", "/activity/resources"],
+      ]}
+     />
     </ul>
    )}
 

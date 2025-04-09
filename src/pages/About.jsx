@@ -15,7 +15,7 @@ function About() {
      content="Millat Science Club is dedicated to fostering scientific curiosity and innovation among students and science enthusiasts."
     />
    </Helmet>
-   <div className="_about-1">
+   <div>
     <div className="w-full border border-gray-700/20 dark:border-gray-100/20 bg-primary/5 dark:bg-primary/50 backdrop-blur-xl grid xl:grid-cols-2">
      <div className="px-4 sm:px-8 py-18 xl:py-[10rem] border-b-1 xl:border-b-0 xl:border-r-1 border-gray-700/20 dark:border-gray-100/20">
       <h3 className="__topToBottom text-2xl md:text-3xl lg:text-4xl font-bold mb-6">

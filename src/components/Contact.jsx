@@ -1,15 +1,10 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import { Helmet } from "react-helmet";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 function Contact() {
  return (
   <div>
-   <Helmet>
-    <title>Contact Us</title>
-    <meta name="description" content="Get in touch with us." />
-   </Helmet>
-   <div className="w-full max-w-6xl mx-auto pt-12 pb-20">
-    <div className="p-6">
+   <div className="__topToBottom w-full max-w-6xl mx-auto py-20 mb-12 bg-gray-100 dark:bg-gray-900 rounded-lg shadow-lg">
+    <div className="px-8 lg:px-16">
      <h2 className="text-2xl xl:text-3xl font-bold mb-8">Get in Touch</h2>
 
      <div className="grid gap-12 lg:grid-cols-2">
@@ -49,7 +44,6 @@ function Contact() {
          <p className="text-gray-600 dark:text-gray-400">contact@mscbd.org</p>
         </div>
        </div>
-
       </div>
 
       <div>

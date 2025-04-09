@@ -13,12 +13,17 @@
         {
             "name": "Abdul Mannan",
             "inst": "Assistant Professor, Chemistry",
-            "pic": "mannan.jpg"
+            "pic": "mannan.png"
+        },
+        {
+            "name": "Ashraful Islam",
+            "inst": "Assistant Professor, Biology",
+            "pic": "demo.png"
         },
         {
             "name": "Sanaullah Ansari",
             "inst": "Senior Lecturer, Mathematics",
-            "pic": "demo.png"
+            "pic": "8984f73e578d.png"
         },
         {
             "name": "Sheikh Farid",
@@ -29,14 +34,15 @@
             "name": "Suhrawardy",
             "inst": "Senior Lecturer, Physics",
             "pic": "demo.png"
-        },
-        {
-            "name": "Ashraful Islam",
-            "inst": "Assistant Professor, Biology",
-            "pic": "demo.png"
         }
     ],
     "advisors": [
+        {
+            "name": "Rahibul Islam Rohan",
+            "inst": "Former President. MBBS at Ain Shams University, Egypt",
+            "batch": "Alim'20",
+            "pic": "149e34c81bda.png"
+        },
         {
             "name": "Md Hasan Sarder",
             "inst": "Former President of Millat Science Club",
@@ -50,12 +56,6 @@
             "pic": "6772925612301.jpg"
         },
         {
-            "name": "Shaifullah Maruf",
-            "inst": "Dhaka City College",
-            "batch": "Dakhil'22",
-            "pic": "shaiu877.jpg"
-        },
-        {
             "name": "Md Irfan Hasan Fahim",
             "inst": "Full Stack Web Developer",
             "batch": "Alim'23",
@@ -66,6 +66,12 @@
             "inst": "Jahangirnagar University",
             "batch": "Alim'24",
             "pic": "BpaTCYjt.jpg"
+        },
+        {
+            "name": "Shaifullah Maruf",
+            "inst": "Dhaka City College",
+            "batch": "Dakhil'22",
+            "pic": "shaiu877.jpg"
         }
     ],
     "executives": {
@@ -90,17 +96,27 @@
             {
                 "name": "Ubaidullah Jabir",
                 "role": "Head of Planning and Development",
-                "pic": "7GYUJGJUYG.jpg"
+                "pic": "2239237011ff0d.png"
             },
             {
                 "name": "Md Shariful Islam Sami",
                 "role": "Secretary of Planning and Development",
-                "pic": "1742290628048.jpg"
+                "pic": "1742290628048.png"
+            },
+            {
+                "name": "Ashfak Ibnu Akhter",
+                "role": "Head of Event Management",
+                "pic": "36989670096.png"
             },
             {
                 "name": "Mohammad Sefatullah",
                 "role": "Head of IT",
                 "pic": "07086463089198.jpg"
+            },
+            {
+                "name": "Abid Ahsan Tahmid",
+                "role": "Head of Co-Curricular Activities",
+                "pic": "Wef8a86eb.png"
             },
             {
                 "name": "Sadman Said Safi",
@@ -110,7 +126,7 @@
             {
                 "name": "Mosleh Uddin",
                 "role": "Head of Communication and Affairs",
-                "pic": "1742402694269.jpg"
+                "pic": "1742402694269.png"
             }
         ]
     },

@@ -8,8 +8,8 @@ import { topToBottom } from "../utils/anims";
 import Typewriter from "typewriter-effect/dist/core";
 import AccordionItem from "../components/Accordion";
 import { Helmet } from "react-helmet";
-import panels from "../utils/panels.json";
-import { api } from "../utils/data";
+import { achievements, api } from "../utils/data";
+import Contact from "../components/Contact";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -106,55 +106,12 @@ function Home() {
   },
  ];
 
- const [activeTab, setActiveTab] = useState(1);
-
- const handleTabClick = (tabId) => {
-  setActiveTab(tabId);
- };
-
- const tabs = [
-  {
-   id: 1,
-   title: "At a Glance",
-   content: (
-    <>
-     <div className="w-full max-w-3xl mx-auto border rounded-lg shadow-sm bg-gray-200/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 grid grid-cols-2">
-      {[
-       ["Founded", "2016"],
-       ["Projects", "2+"],
-       ["National Fest", "1"],
-       ["Workshops", "50+"],
-      ].map((v, i) => (
-       <div
-        className="__topToBottom box px-4 py-8 sm:px-8 sm:py-12 text-center hover:bg-gray-700/5 dark:hover:bg-gray-700/30 border border-transparent hover:border-gray-500 dark:hover:border-gray-700"
-        key={i}
-       >
-        <h3 className="font-semibold text-5xl">{v[1]}</h3>
-        <p className="text-xl mt-3 animate-pulse">{v[0]}</p>
-       </div>
-      ))}
-     </div>
-    </>
-   ),
-  },
-  {
-   id: 2,
-   title: "Achievements",
-   content: (
-    <>
-     <div className="w-full min-h-[200px] max-w-3xl mx-auto border rounded-lg shadow-sm bg-gray-200/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 grid grid-cols-2"></div>
-    </>
-   ),
-  },
- ];
-
  useEffect(() => {
   fetch(api + "/event/latest")
    .then((response) => response.json())
    .then((d) => {
     setLatestEvent(d.data);
    })
-   .catch((error) => {});
  }, []);
 
  return (
@@ -213,7 +170,7 @@ function Home() {
        scientific knowledge through hands-on activities and engaging events.
       </p>
       <div className="__topToBottom">
-       <Link to="/events">
+       <Link to="/activity/events">
         <Button dark className="py-3 sm:px-7 sm:text-[1.1rem]">
          Explore Events
         </Button>
@@ -223,43 +180,8 @@ function Home() {
      <div className="w-full lg:w-[5%] h-full"></div>
      <div className="w-full lg:w-[40%] h-full bg-[url(/images/msc-cover.jpg)] bg-cover bg-center bg-no-repeat">
       <div className="w-full h-full bg-black/50 flex items-center justify-center py-12 px-4 sm:px-8 backdrop-blur">
-       <div className="w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <div className="hidden">
-         <img
-          src="/msc.jpg"
-          alt="Science Fest"
-          className="w-full rounded-lg aspect-16/9 object-cover mb-6"
-         />
-         <h5 className="mb-2 text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          1st Al Hikmah Science Fest 2025
-         </h5>
-         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base">
-          Bridging Science & Faith – Exploring the Harmony Between Religion and
-          Modern Science
-         </p>
-         <Link
-          to="/event/1st-al-hikmah-science-fest-2025"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-         >
-          View Event
-          <svg
-           className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-           aria-hidden="true"
-           xmlns="http://www.w3.org/2000/svg"
-           fill="none"
-           viewBox="0 0 14 10"
-          >
-           <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-           />
-          </svg>
-         </Link>
-        </div>
-        <div className="w-full p-6 bg-gray-100 dark:bg-gray-700 rounded-lg">
+       <div className="w-full max-w-sm p-8 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div>
          {latestEvent ? (
           <div className="flex flex-col gap-2">
            <img
@@ -289,8 +211,8 @@ function Home() {
            </div>
           </div>
          ) : (
-          <p className="text-gray-600 dark:text-gray-400 text-center">
-           No upcoming festival!
+          <p className="text-gray-600 dark:text-gray-400 text-center py-6">
+           No latest festival!
           </p>
          )}
         </div>
@@ -400,58 +322,56 @@ function Home() {
 
    <div className="_tabs z-10 py-[5rem] px-4 sm:px-8">
     <div className="w-full max-w-6xl mx-auto">
-     <ul className="__topToBottom flex flex-wrap justify-center text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-      {tabs.map(({ id, title }) => (
-       <li key={id} className="me-2">
-        <a
-         href="#"
-         className={`inline-block px-4 py-3 rounded-lg ${
-          activeTab === id
-           ? "text-white bg-blue-600"
-           : "hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
-         }`}
-         onClick={(e) => {
-          e.preventDefault();
-          handleTabClick(id);
-         }}
-        >
-         {title}
-        </a>
-       </li>
-      ))}
-     </ul>
+     <h3 className="__topToBottom text-2xl text-center md:text-3xl lg:text-4xl font-semibold mb-4">
+      Our Achievements
+     </h3>
 
      <div className="__topToBottom mt-16">
-      {tabs.map(
-       ({ id, content }) => activeTab === id && <div key={id}>{content}</div>
-      )}
+      <div className="w-full max-w-3xl mx-auto border rounded-lg shadow-sm bg-gray-200/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 grid grid-cols-2">
+       {[
+        ["Founded", "2016"],
+        ["National Fest", "2"],
+        ["Intra Competitions", "10+"],
+        ["Workshops", "30+"],
+       ].map((v, i) => (
+        <div
+         className="__topToBottom box px-4 py-8 sm:px-8 sm:py-12 text-center hover:bg-gray-700/5 dark:hover:bg-gray-700/30 border border-transparent hover:border-gray-500 dark:hover:border-gray-700"
+         key={i}
+        >
+         <h3 className="font-semibold lg:text-5xl text-3xl text-gray-900 dark:text-white mb-2">
+          {v[1]}
+         </h3>
+         <p className="text-xl mt-3 animate-pulse">{v[0]}</p>
+        </div>
+       ))}
+      </div>
+     </div>
+     <div className="__topToBottom mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+      {Array.isArray(achievements) &&
+       achievements.slice(0, 3).map((achievement, index) => (
+        <div key={index}>
+         <img
+          className="rounded-lg aspect-[16/9] h-48 w-full object-cover border-2 border-blue-500/50 dark:border-blue-400/50 p-2 hover:scale-105 transition-transform duration-300"
+          src={achievement.image}
+          alt={achievement.title}
+         />
+         <div className="pt-3">
+          <h5 className="mb-2 text-center text-xl font-medium tracking-tight text-blue-900 dark:text-blue-400">
+           {achievement.title}
+          </h5>
+         </div>
+        </div>
+       ))}
+     </div>
+     <div className="__topToBottom mt-8 text-center">
+      <Link to="/achievements">
+       <Button className="py-3 px-7 text-lg">View All</Button>
+      </Link>
      </div>
     </div>
    </div>
 
-   <div className="w-full max-w-7xl mx-auto dark:bg-primary/50 backdrop-blur-xl px-8 pb-[5rem]">
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 xl:gap-8 w-full max-w-4xl mx-auto">
-     {panels.executives &&
-      panels.executives.main.map((v, i) => (
-       <div
-        className="__topToBottom border border-gray-400/40 dark:border-gray-700/30 bg-gray-500/5 dark:bg-gray-700/20 rounded-xl"
-        key={i}
-       >
-        <img
-         src={"/images/person/" + v.pic}
-         alt={v.name}
-         className="w-full aspect-square object-cover rounded-t-xl"
-        />
-        <div className="p-4 lg:p-6 flex flex-col justify-center text-center">
-         <h3 className="font-bold sm:text-xl sm:mb-2">{v.name}</h3>
-         <p className="text-blue-800 dark:text-blue-300 text-xs sm:text-sm">
-          {v.role}
-         </p>
-        </div>
-       </div>
-      ))}
-    </div>
-   </div>
+   <Contact />
   </>
  );
 }

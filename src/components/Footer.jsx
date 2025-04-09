@@ -75,18 +75,18 @@ function Footer() {
         </li>
         <li>
          <Link
-          to="/events"
+          to="/achievements"
           className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
          >
-          Events
+          Achievements
          </Link>
         </li>
         <li>
          <Link
-          to="/contact-us"
+          to="/panel/executives"
           className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
          >
-          Contact Us
+          Executives
          </Link>
         </li>
        </ul>
@@ -94,15 +94,23 @@ function Footer() {
 
       <div>
        <h3 className="font-semibold text-lg mb-4 text-gray-900 dark:text-white">
-        Resources
+        Activities
        </h3>
        <ul className="space-y-2">
         <li>
          <Link
-          to="/resources"
+          to="/activity/events"
           className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
          >
-          All Resources
+          Events
+         </Link>
+        </li>
+        <li>
+         <Link
+          to="/activity/resources"
+          className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white"
+         >
+          Resources
          </Link>
         </li>
        </ul>

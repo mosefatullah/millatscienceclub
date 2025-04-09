@@ -33,7 +33,7 @@ function Events() {
         alt=""
        />
        <div class="p-5">
-        <Link to={`/event/${event.event_id}`}>
+        <Link to={`/activity/event/${event.event_id}`}>
          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white underline-offset-4 underline decoration-blue-500/50 decoration-2">
           {event.title || "Error occured"}
          </h5>
@@ -45,7 +45,7 @@ function Events() {
          href={event.direct_link || event.registration_link}
          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-         {event.direct_link ? "Details" : "Registration Link"}
+         {event.direct_link ? "Event Details" : "Registration Link"}
         </a>
        </div>
       </div>

@@ -377,7 +377,7 @@ function Register() {
         type="text"
         name="payment_reference_code"
         id="payment_reference_code"
-        label="Payment Reference Code"
+        label="Reference Code (TrxID)"
         required
         value={formData.payment_reference_code}
         onChange={handleInputChange}
@@ -386,8 +386,8 @@ function Register() {
 
       {/* Payment Instructions */}
       <p className="text-[0.8rem] text-gray-600 dark:text-gray-400 my-4">
-       Please pay 50 TK to one of the following options and provide the payment
-       reference code:
+       Please pay 200 TK to one of the following options and provide the payment
+       reference code (last 4 digits of the transaction id):
       </p>
       <ul className="list-disc pl-5 text-[0.9rem] text-gray-600 dark:text-gray-400 mb-5">
        <li>বিকাশ (Bkash): 01318349028</li>
