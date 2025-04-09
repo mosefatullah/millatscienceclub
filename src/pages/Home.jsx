@@ -190,7 +190,7 @@ function Home() {
             className="__topToBottom w-full rounded-lg aspect-16/9 object-cover mb-6"
            />
            <div>
-            <Link to={"/event/" + latestEvent.event_id}>
+            <Link to={"/activity/event/" + latestEvent.event_id}>
              <h5 className="__topToBottom mb-2 text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white underline-offset-4 underline decoration-blue-500/50 decoration-2">
               {latestEvent.title || "Error occured"}
              </h5>
@@ -202,7 +202,7 @@ function Home() {
              to={
               latestEvent.direct_link ||
               latestEvent.registration_link ||
-              "/events"
+              "/activity/events"
              }
              className="__topToBottom inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
