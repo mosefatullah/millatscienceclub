@@ -16,6 +16,8 @@ function Resources() {
    <Helmet>
     <title>Resources</title>
     <meta name="description" content="The resources provided by the club." />
+
+    <link rel="canonical" href="https://mscbd.org/resources" />
    </Helmet>
 
    <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-center mt-10 mb-5">

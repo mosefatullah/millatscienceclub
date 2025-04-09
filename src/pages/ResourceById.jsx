@@ -11,15 +11,23 @@ function ResourceById() {
  useEffect(() => {
   fetch(api + "/resource/" + id)
    .then((response) => response.json())
-   .then((d) => setResource(d.data))
-   .catch((error) => {});
+   .then((d) => setResource(d.data));
  }, [id]);
 
  return (
   <div className="w-full max-w-3xl mx-auto mt-10 mb-12">
-    <Helmet>
-        <title>{(resource && resource.title) || "Resource -"}</title>
-    </Helmet>
+   <Helmet>
+    <title>{(resource && resource.title) || "Resource -"}</title>
+    <meta
+     name="description"
+     content={
+      (resource && resource.description.slice(0, 150) + "...") ||
+      "No description available."
+     }
+    />
+
+    <link rel="canonical" href={"https://mscbd.org/resources/" + id} />
+   </Helmet>
    <div className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden dark:bg-gray-800 dark:border-gray-700">
     <img
      className="w-full h-60 sm:h-72 lg:h-96 object-cover bg-gray-300 dark:bg-gray-700"

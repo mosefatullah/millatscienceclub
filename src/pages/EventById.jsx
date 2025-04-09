@@ -12,13 +12,23 @@ function EventById() {
   fetch(api + "/event/" + id)
    .then((response) => response.json())
    .then((d) => setEvent(d.data))
-   .catch((error) => {});
  }, [id]);
 
  return (
   <div className="w-full max-w-3xl mx-auto mt-10 mb-12">
    <Helmet>
     <title>{(event && event.title) || "Event -"}</title>
+
+    <meta
+     name="description"
+     content={
+      (event && event.description.slice(0, 145) + "...") ||
+      "No description available."
+     }
+    />
+    <meta name="keywords" content={event && event.keywords} />
+
+    <link rel="canonical" href={"https://mscbd.org/activity/event/" + id} />
    </Helmet>
    <div className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden dark:bg-gray-800 dark:border-gray-700">
     {/* Image */}

@@ -14,6 +14,8 @@ function About() {
      name="description"
      content="Millat Science Club is dedicated to fostering scientific curiosity and innovation among students and science enthusiasts."
     />
+
+    <link rel="canonical" href="https://mscbd.org/about-us" />
    </Helmet>
    <div>
     <div className="w-full border border-gray-700/20 dark:border-gray-100/20 bg-primary/5 dark:bg-primary/50 backdrop-blur-xl grid xl:grid-cols-2">

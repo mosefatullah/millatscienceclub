@@ -111,7 +111,7 @@ function Home() {
    .then((response) => response.json())
    .then((d) => {
     setLatestEvent(d.data);
-   })
+   });
  }, []);
 
  return (
@@ -122,6 +122,8 @@ function Home() {
      name="description"
      content="Join Millat Science Club to explore, experiment, and expand your scientific knowledge."
     />
+
+    <link rel="canonical" href="https://mscbd.org" />
    </Helmet>
    <div className="relative _hero w-full min-h-[86vh]">
     <div className="anims max-w-[100vw]">

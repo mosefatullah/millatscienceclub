@@ -103,6 +103,8 @@ function Register() {
      name="description"
      content="Register as a member of Millat Science Club."
     />
+
+    <link rel="canonical" href="https://mscbd.org/register" />
    </Helmet>
    <div className="w-full max-w-6xl mx-auto my-[5rem] p-8 lg:p-12 rounded-3xl bg-gray-100/80 dark:bg-white/5">
     <div className="_steps mb-12">

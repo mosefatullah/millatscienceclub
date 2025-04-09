@@ -7,6 +7,8 @@ export default function PanelExecutive() {
    <Helmet>
     <title>Panel - Executives</title>
     <meta name="description" content="The executive panel of the club." />
+
+    <link rel="canonical" href="https://mscbd.org/panel/executives" />
    </Helmet>
    <div className="w-full max-w-7xl mx-auto dark:bg-primary/50 backdrop-blur-xl px-8 py-15 xl:py-[5rem]">
     <h3 className="__topToBottom text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-12">

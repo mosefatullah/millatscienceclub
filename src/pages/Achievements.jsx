@@ -7,6 +7,8 @@ function Achievements() {
    <Helmet>
     <title>Achievements</title>
     <meta name="description" content="The achievements of the club." />
+
+    <link rel="canonical" href="https://mscbd.org/achievements" />
    </Helmet>
    <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-center mt-10 mb-5">
     Achievements
