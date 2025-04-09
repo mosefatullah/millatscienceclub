@@ -26,7 +26,6 @@ function EventById() {
       "No description available."
      }
     />
-    <meta name="keywords" content={event && event.keywords} />
 
     <link rel="canonical" href={"https://mscbd.org/activity/event/" + id} />
    </Helmet>
